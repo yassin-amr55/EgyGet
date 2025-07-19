@@ -1,0 +1,162 @@
+.contact {
+  background-color: #ffffff;
+}
+
+.contact-content {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 4rem;
+  max-width: 1000px;
+  margin: 0 auto;
+}
+
+.contact-info h3 {
+  font-size: 1.8rem;
+  margin-bottom: 1rem;
+  color: #1f2937;
+}
+
+.contact-info > p {
+  font-size: 1.1rem;
+  color: #6b7280;
+  margin-bottom: 2rem;
+  line-height: 1.6;
+}
+
+.contact-item {
+  display: flex;
+  align-items: flex-start;
+  gap: 1rem;
+  margin-bottom: 2rem;
+}
+
+.contact-icon {
+  background: #3b82f6;
+  color: white;
+  width: 48px;
+  height: 48px;
+  border-radius: 12px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+}
+
+.contact-item h4 {
+  margin-bottom: 0.5rem;
+  color: #1f2937;
+  font-weight: 600;
+}
+
+.contact-item p {
+  color: #6b7280;
+  line-height: 1.5;
+  margin: 0;
+}
+
+.contact-form {
+  background: #f8fafc;
+  padding: 2rem;
+  border-radius: 12px;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.05);
+}
+
+.form-group {
+  margin-bottom: 1.5rem;
+}
+
+.form-group input,
+.form-group textarea {
+  width: 100%;
+  padding: 14px 16px;
+  border: 2px solid #e5e7eb;
+  border-radius: 8px;
+  font-size: 1rem;
+  transition: border-color 0.3s ease;
+  background: white;
+}
+
+.form-group input:focus,
+.form-group textarea:focus {
+  outline: none;
+  border-color: #3b82f6;
+}
+
+.form-group textarea {
+  resize: vertical;
+  min-height: 120px;
+}
+
+.submit-btn {
+  width: 100%;
+  background: linear-gradient(135deg, #3b82f6 0%, #1d4ed8 100%);
+  font-size: 1.1rem;
+  padding: 16px;
+  margin-top: 1rem;
+}
+
+.submit-btn:hover {
+  background: linear-gradient(135deg, #2563eb 0%, #1e40af 100%);
+}
+
+@media (max-width: 768px) {
+  .contact-content {
+    grid-template-columns: 1fr;
+    gap: 2rem;
+  }
+
+  .contact-form {
+    padding: 1.5rem;
+  }
+
+  .contact-item {
+    margin-bottom: 1.5rem;
+  }
+}
+
+@media (max-width: 480px) {
+  .contact-info h3 {
+    font-size: 1.5rem;
+  }
+
+  .contact-info > p {
+    font-size: 1rem;
+    margin-bottom: 1.5rem;
+  }
+
+  .contact-item {
+    margin-bottom: 1.25rem;
+  }
+
+  .contact-icon {
+    width: 40px;
+    height: 40px;
+  }
+
+  .contact-item h4 {
+    font-size: 0.95rem;
+  }
+
+  .contact-item p {
+    font-size: 0.9rem;
+  }
+
+  .contact-form {
+    padding: 1.25rem;
+  }
+
+  .form-group {
+    margin-bottom: 1.25rem;
+  }
+
+  .form-group input,
+  .form-group textarea {
+    padding: 12px 14px;
+    font-size: 16px; /* Prevents zoom on iOS */
+  }
+
+  .submit-btn {
+    padding: 14px;
+    font-size: 1rem;
+  }
+}
