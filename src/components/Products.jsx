@@ -16,7 +16,7 @@ const Products = () => {
       originalPrice: "$99.99",
       image: "https://images.pexels.com/photos/3394650/pexels-photo-3394650.jpeg?auto=compress&cs=tinysrgb&w=400",
       category: "electronics",
-      rating: 4.5,
+      delivery: 2,
       reviews: 128
     },
     {
@@ -26,7 +26,7 @@ const Products = () => {
       originalPrice: "$249.99",
       image: "https://images.pexels.com/photos/393047/pexels-photo-393047.jpeg?auto=compress&cs=tinysrgb&w=400",
       category: "electronics",
-      rating: 4.7,
+      delivery: 5,
       reviews: 89
     },
     {
@@ -36,7 +36,7 @@ const Products = () => {
       originalPrice: "$29.99",
       image: "https://images.pexels.com/photos/302899/pexels-photo-302899.jpeg?auto=compress&cs=tinysrgb&w=400",
       category: "home",
-      rating: 4.3,
+      delivery: 12,
       reviews: 56
     },
     {
@@ -46,7 +46,7 @@ const Products = () => {
       originalPrice: "$199.99",
       image: "https://images.pexels.com/photos/46710/pexels-photo-46710.jpeg?auto=compress&cs=tinysrgb&w=400",
       category: "fashion",
-      rating: 4.6,
+      delivery: 2,
       reviews: 234
     },
     {
@@ -56,7 +56,7 @@ const Products = () => {
       originalPrice: "$59.99",
       image: "https://images.pexels.com/photos/18105/pexels-photo.jpg?auto=compress&cs=tinysrgb&w=400",
       category: "electronics",
-      rating: 4.4,
+      delivery: 3,
       reviews: 67
     },
     {
@@ -66,7 +66,7 @@ const Products = () => {
       originalPrice: "$39.99",
       image: "https://images.pexels.com/photos/996329/pexels-photo-996329.jpeg?auto=compress&cs=tinysrgb&w=400",
       category: "fashion",
-      rating: 4.2,
+      delivery: 44,
       reviews: 145
     },
     {
@@ -76,7 +76,7 @@ const Products = () => {
       originalPrice: "$24.99",
       image: "https://images.pexels.com/photos/1005058/pexels-photo-1005058.jpeg?auto=compress&cs=tinysrgb&w=400",
       category: "home",
-      rating: 4.8,
+      delivery: 12,
       reviews: 92
     },
     {
@@ -86,7 +86,7 @@ const Products = () => {
       originalPrice: "$44.99",
       image: "https://images.pexels.com/photos/4219654/pexels-photo-4219654.jpeg?auto=compress&cs=tinysrgb&w=400",
       category: "electronics",
-      rating: 4.1,
+      delivery: 3,
       reviews: 78
     },
     {
@@ -96,7 +96,7 @@ const Products = () => {
       originalPrice: "$119.99",
       image: "https://images.pexels.com/photos/2905238/pexels-photo-2905238.jpeg?auto=compress&cs=tinysrgb&w=400",
       category: "fashion",
-      rating: 4.5,
+      delivery: 1,
       reviews: 156
     },
     {
@@ -106,7 +106,7 @@ const Products = () => {
       originalPrice: "$69.99",
       image: "https://images.pexels.com/photos/1112598/pexels-photo-1112598.jpeg?auto=compress&cs=tinysrgb&w=400",
       category: "home",
-      rating: 4.7,
+      delivery: 2,
       reviews: 203
     }
   ];
@@ -208,10 +208,7 @@ const Products = () => {
                   <h3 className="product-name">{product.name}</h3>
                   
                   <div className="product-rating">
-                    <div className="stars">
-                      {renderStars(product.rating)}
-                    </div>
-                    <span className="reviews">({product.reviews} reviews)</span>
+                    <span className="reviews">In {product.delivery} days</span>
                   </div>
 
                   <div className="product-price">

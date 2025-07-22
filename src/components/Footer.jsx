@@ -8,7 +8,7 @@ const Footer = () => {
         <div className="footer-content">
           <div className="footer-section">
             <div className="footer-logo">
-              <h3>ShopMart</h3>
+              <h3>EgyGet</h3>
               <p>Your trusted online shopping destination for quality products at great prices.</p>
             </div>
             <div className="social-links">
@@ -62,7 +62,7 @@ const Footer = () => {
         </div>
 
         <div className="footer-bottom">
-          <p>&copy; 2024 ShopMart. All rights reserved.</p>
+          <p>&copy; 2025 EgyGet. All rights reserved.</p>
           <div className="footer-links">
             <a href="#privacy">Privacy Policy</a>
             <a href="#terms">Terms of Service</a>

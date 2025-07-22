@@ -65,6 +65,7 @@ const Checkout = ({ isOpen, onClose }) => {
       };
 
       const order = await createOrder(orderData);
+      console.log('Order Info:', JSON.stringify(order, null, 2)); // <-- Add this line
       setCompletedOrder(order);
       setOrderComplete(true);
       clearCart();
