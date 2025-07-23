@@ -1,4 +1,12 @@
 import React, { createContext, useContext, useState, useEffect } from 'react';
+import { auth } from '../firebase';
+import {
+  createUserWithEmailAndPassword,
+  signInWithEmailAndPassword,
+  signOut,
+  updateProfile,
+  onAuthStateChanged,
+} from 'firebase/auth';
 
 const AuthContext = createContext();
 
@@ -7,80 +15,43 @@ export const AuthProvider = ({ children }) => {
   const [isLoading, setIsLoading] = useState(true);
 
   useEffect(() => {
-    // Load user from localStorage on mount
-    const savedUser = localStorage.getItem('ecommerce-user');
-    if (savedUser) {
-      try {
-        const parsedUser = JSON.parse(savedUser);
-        setUser(parsedUser);
-      } catch (error) {
-        console.error('Error loading user from localStorage:', error);
-      }
-    }
-    setIsLoading(false);
+    // Listen for Firebase auth state changes
+    const unsubscribe = onAuthStateChanged(auth, (firebaseUser) => {
+      setUser(firebaseUser);
+      setIsLoading(false);
+    });
+    return unsubscribe;
   }, []);
 
-  const login = (email, password) => {
-    // Get users from localStorage
-    const users = JSON.parse(localStorage.getItem('ecommerce-users') || '[]');
-    const foundUser = users.find(u => u.email === email && u.password === password);
-    
-    if (foundUser) {
-      const userWithoutPassword = { ...foundUser };
-      delete userWithoutPassword.password;
-      setUser(userWithoutPassword);
-      localStorage.setItem('ecommerce-user', JSON.stringify(userWithoutPassword));
+  const login = async (email, password) => {
+    try {
+      await signInWithEmailAndPassword(auth, email, password);
       return { success: true };
+    } catch (error) {
+      return { success: false, error: error.message };
     }
-    
-    return { success: false, error: 'Invalid email or password' };
   };
 
-  const register = (userData) => {
-    // Get existing users
-    const users = JSON.parse(localStorage.getItem('ecommerce-users') || '[]');
-    
-    // Check if user already exists
-    if (users.find(u => u.email === userData.email)) {
-      return { success: false, error: 'User already exists with this email' };
+  const register = async ({ username, email, password }) => {
+    try {
+      const userCredential = await createUserWithEmailAndPassword(auth, email, password);
+      await updateProfile(userCredential.user, { displayName: username });
+      setUser({ ...userCredential.user, displayName: username });
+      return { success: true };
+    } catch (error) {
+      return { success: false, error: error.message };
     }
-
-    // Add new user
-    const newUser = {
-      id: Date.now().toString(),
-      name: userData.username, // Keep name for compatibility
-      ...userData,
-      createdAt: new Date().toISOString()
-    };
-    
-    users.push(newUser);
-    localStorage.setItem('ecommerce-users', JSON.stringify(users));
-    
-    // Auto login after registration
-    const userWithoutPassword = { ...newUser };
-    delete userWithoutPassword.password;
-    setUser(userWithoutPassword);
-    localStorage.setItem('ecommerce-user', JSON.stringify(userWithoutPassword));
-    
-    return { success: true };
   };
 
-  const logout = () => {
+  const logout = async () => {
+    await signOut(auth);
     setUser(null);
-    localStorage.removeItem('ecommerce-user');
   };
 
-  const updateProfile = (updatedData) => {
-    const updatedUser = { ...user, ...updatedData };
-    setUser(updatedUser);
-    localStorage.setItem('ecommerce-user', JSON.stringify(updatedUser));
-    
-    // Update in users array
-    const users = JSON.parse(localStorage.getItem('ecommerce-users') || '[]');
-    const userIndex = users.findIndex(u => u.id === user.id);
-    if (userIndex !== -1) {
-      users[userIndex] = { ...users[userIndex], ...updatedData };
-      localStorage.setItem('ecommerce-users', JSON.stringify(users));
+  const updateProfileData = async (updatedData) => {
+    if (auth.currentUser) {
+      await updateProfile(auth.currentUser, updatedData);
+      setUser({ ...auth.currentUser, ...updatedData });
     }
   };
 
@@ -90,8 +61,8 @@ export const AuthProvider = ({ children }) => {
     login,
     register,
     logout,
-    updateProfile,
-    isAuthenticated: !!user
+    updateProfile: updateProfileData,
+    isAuthenticated: !!user,
   };
 
   return (
