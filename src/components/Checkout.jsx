@@ -46,7 +46,7 @@ const Checkout = ({ isOpen, onClose }) => {
 
     try {
       const orderData = {
-        userId: user?.id || 'guest',
+        userId: user?.uid || 'guest',
         items: items,
         total: getCartTotal(),
         customerInfo: {
