@@ -9,7 +9,7 @@ const Orders = ({ isOpen, onClose }) => {
 
   if (!isOpen) return null;
 
-  const userOrders = user ? getUserOrders(user.id) : [];
+  const userOrders = user ? getUserOrders() : [];
 
   const getStatusColor = (status) => {
     switch (status) {
