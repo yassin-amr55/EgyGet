@@ -82,8 +82,6 @@ const Checkout = ({ isOpen, onClose }) => {
     } catch (error) {
       console.error('Order submission failed:', error);
       alert('Failed to place order. Please try again.');
-    } finally {
-      setIsSubmitting(false);
     }
   };
 
