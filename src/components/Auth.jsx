@@ -12,7 +12,7 @@ const Auth = ({ isOpen, onClose, initialMode = 'login' }) => {
   });
   const [error, setError] = useState('');
   const [isLoading, setIsLoading] = useState(false);
-  
+
   const { login, register } = useAuth();
 
   const handleInputChange = (e) => {
@@ -31,7 +31,7 @@ const Auth = ({ isOpen, onClose, initialMode = 'login' }) => {
 
     try {
       if (mode === 'login') {
-        const result = login(formData.email, formData.password);
+        const result = await login(formData.email, formData.password);
         if (result.success) {
           onClose();
           setFormData({ username: '', email: '', password: '', confirmPassword: '' });
@@ -41,15 +41,16 @@ const Auth = ({ isOpen, onClose, initialMode = 'login' }) => {
       } else {
         if (formData.password !== formData.confirmPassword) {
           setError('Passwords do not match');
+          setIsLoading(false);
           return;
         }
-        
-        const result = register({
+
+        const result = await register({
           username: formData.username,
           email: formData.email,
           password: formData.password
         });
-        
+
         if (result.success) {
           onClose();
           setFormData({ username: '', email: '', password: '', confirmPassword: '' });
