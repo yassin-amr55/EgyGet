@@ -16,7 +16,7 @@ const Products = () => {
       originalPrice: "$99.99",
       image: "https://images.pexels.com/photos/3394650/pexels-photo-3394650.jpeg?auto=compress&cs=tinysrgb&w=400",
       category: "electronics",
-      delivery: 3,
+      delivery: 25,
       reviews: 128
     },
     {
