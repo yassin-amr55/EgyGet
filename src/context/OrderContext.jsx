@@ -42,23 +42,9 @@ export const OrderProvider = ({ children }) => {
       createdAt: new Date().toISOString(),
       estimatedDelivery: new Date(Date.now() + 3 * 24 * 60 * 60 * 1000).toISOString()
     };
-    await addDoc(collection(db, 'orders'), newOrder);
-
-    // Refetch all orders for the user from Firestore
-    const q = query(
-      collection(db, 'orders'),
-      where('userId', '==', user.uid),
-      orderBy('createdAt', 'desc')
-    );
-    const querySnapshot = await getDocs(q);
-    const userOrders = querySnapshot.docs.map(doc => ({
-      id: doc.id,
-      ...doc.data()
-    }));
-    setOrders(userOrders);
-
-    // Optionally return the new order
-    return newOrder;
+    const docRef = await addDoc(collection(db, 'orders'), newOrder);
+    setOrders(prev => [{ id: docRef.id, ...newOrder }, ...prev]);
+    return { id: docRef.id, ...newOrder };
   };
 
   // Update order status (optional, requires Firestore update logic)
