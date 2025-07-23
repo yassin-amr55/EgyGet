@@ -96,7 +96,7 @@ const Products = () => {
       originalPrice: "$119.99",
       image: "https://images.pexels.com/photos/2905238/pexels-photo-2905238.jpeg?auto=compress&cs=tinysrgb&w=400",
       category: "fashion",
-      delivery: 1,
+      delivery: 6,
       reviews: 156
     },
     {
