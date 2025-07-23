@@ -86,14 +86,14 @@ const Header = () => {
                     <circle cx="12" cy="7" r="4"/>
                   </svg>
                   <span>
-                    {user ? (user.name || user.username || 'Account').split(' ')[0] : 'Account'}
+                    {user ? (user.displayName || user.email || 'Account').split(' ')[0] : 'Account'}
                   </span>
                 </button>
                 
                 {showAccountMenu && user && (
                   <div className="account-menu">
                     <div className="account-info">
-                      <p className="account-name">{user.name}</p>
+                      <p className="account-name">{user.displayName}</p>
                       <p className="account-email">{user.email}</p>
                     </div>
                     <button onClick={handleOrdersClick} className="menu-item">
