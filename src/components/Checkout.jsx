@@ -65,7 +65,16 @@ const Checkout = ({ isOpen, onClose }) => {
       };
 
       const order = await createOrder(orderData);
-      console.log('Order Info:', JSON.stringify(order, null, 2)); // <-- Add this line
+
+      // Send order info to your email via Netlify Function
+      await fetch('/.netlify/functions/send-order-email', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify(orderData),
+      });
+
+      const orderInfo = JSON.stringify(order, null, 2)
+      console.log(orderInfo); // <-- Add this line
       setCompletedOrder(order);
       setOrderComplete(true);
       clearCart();
