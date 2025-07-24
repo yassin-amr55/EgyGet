@@ -81,7 +81,7 @@ const FeaturedProducts = () => {
     document.getElementById('products')?.scrollIntoView({ behavior: 'smooth' });
   };
   return (
-    <section className="featured-products section">
+    <section className="featured-products section" id="home">
       <div className="container">
         <h2 className="section-title">Featured Products</h2>
         
