@@ -286,6 +286,9 @@
     min-width: 48px; /* Touch target size */
     min-height: 48px;
   }
+  .account-menu {
+    right: -70px;
+  }
 
   .mobile-menu-btn {
     display: flex;
