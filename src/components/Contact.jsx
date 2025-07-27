@@ -44,7 +44,7 @@ const Contact = () => {
               </div>
               <div>
                 <h4>Address</h4>
-                <p>123 Business Street<br/>New York, NY 10001</p>
+                <p>192 Nour city, Hadayek October,<br/> 6th of october, Giza, Egypt</p>
               </div>
             </div>
 
@@ -56,7 +56,7 @@ const Contact = () => {
               </div>
               <div>
                 <h4>Phone</h4>
-                <p>+1 (555) 123-4567</p>
+                <p>+20 106 600 4890</p>
               </div>
             </div>
 
@@ -69,7 +69,7 @@ const Contact = () => {
               </div>
               <div>
                 <h4>Email</h4>
-                <p>info@shopmart.com</p>
+                <p>info@egyget.com</p>
               </div>
             </div>
 
@@ -82,13 +82,13 @@ const Contact = () => {
               </div>
               <div>
                 <h4>Business Hours</h4>
-                <p>Monday - Friday: 9:00 AM - 6:00 PM<br/>Saturday: 10:00 AM - 4:00 PM</p>
+                <p>12:00 AM - 9:00 PM</p>
               </div>
             </div>
           </div>
 
           <div className="contact-form">
-            <form onSubmit={handleSubmit}>
+            <form onSubmit={handleSubmit} className="form-holder">
               <div className="form-group">
                 <input
                   type="text"
@@ -106,17 +106,6 @@ const Contact = () => {
                   name="email"
                   placeholder="Your Email"
                   value={formData.email}
-                  onChange={handleInputChange}
-                  required
-                />
-              </div>
-
-              <div className="form-group">
-                <input
-                  type="text"
-                  name="subject"
-                  placeholder="Subject"
-                  value={formData.subject}
                   onChange={handleInputChange}
                   required
                 />
