@@ -6,7 +6,7 @@ const Footer = () => {
     <footer className="footer" id="about">
       <div className="container">
         <div className="footer-content">
-          <div className="footer-section">
+          <div className="footer-section sectionone">
             <div className="footer-logo">
               <h3>EgyGet</h3>
               <p>Your trusted online shopping destination for quality products at great prices.</p>
@@ -30,7 +30,7 @@ const Footer = () => {
             </div>
           </div>
 
-          <div className="footer-section">
+          <div className="footer-section sectiontwo">
             <h4>Quick Links</h4>
             <ul>
               <li><a href="#home">Home</a></li>
@@ -40,7 +40,7 @@ const Footer = () => {
             </ul>
           </div>
 
-          <div className="footer-section">
+          <div className="footer-section sectiontwo">
             <h4>Categories</h4>
             <ul>
               <li><a href="#electronics">Electronics</a></li>
@@ -50,7 +50,7 @@ const Footer = () => {
             </ul>
           </div>
 
-          <div className="footer-section">
+          <div className="footer-section sectiontwo">
             <h4>Customer Service</h4>
             <ul>
               <li><a href="#help">Help Center</a></li>

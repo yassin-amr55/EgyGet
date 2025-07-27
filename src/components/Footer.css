@@ -5,10 +5,18 @@
 }
 
 .footer-content {
-  display: grid;
-  grid-template-columns: 2fr 1fr 1fr 1fr;
+  display: flex;
+  flex-direction: row;
   gap: 3rem;
   margin-bottom: 2rem;
+}
+
+.sectionone {
+  flex: 2;
+}
+
+.sectiontwo {
+  flex: 1;
 }
 
 .footer-section h3 {
@@ -96,7 +104,7 @@
 
 @media (max-width: 768px) {
   .footer-content {
-    grid-template-columns: 1fr;
+    flex-direction: column;
     gap: 2rem;
   }
 
@@ -117,6 +125,7 @@
   }
 
   .footer-content {
+    flex-direction: column;
     gap: 1.5rem;
   }
 
