@@ -126,7 +126,7 @@ const Products = () => {
   // Then filter by search query
   filteredProducts = searchProducts(filteredProducts, searchQuery);
 
-  const renderStars = (rating) => {
+  /*const renderStars = (rating) => {
     const stars = [];
     const fullStars = Math.floor(rating);
     const hasHalfStar = rating % 1 !== 0;
@@ -151,7 +151,7 @@ const Products = () => {
     }
 
     return stars;
-  };
+  };*/
 
   const handleAddToCart = (product) => {
     addToCart(product);
