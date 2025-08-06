@@ -199,9 +199,6 @@ const Products = () => {
               <div key={product.id} className="product-card">
                 <div className="product-image">
                   <img src={product.image} alt={product.name} />
-                  <div className="product-overlay">
-                    <button className="btn-quick-view">Quick View</button>
-                  </div>
                 </div>
                 
                 <div className="product-content">
