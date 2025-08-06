@@ -8,7 +8,7 @@ const Footer = () => {
         <div className="footer-content">
           <div className="footer-section sectionone">
             <div className="footer-logo">
-              <h3>EgyGet</h3>
+              <h3>HydroNative</h3>
               <p>Your trusted online shopping destination for quality products at great prices.</p>
             </div>
             <div className="social-links">

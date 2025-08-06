@@ -122,7 +122,7 @@
 }
 
 .cart-item-price {
-  color: #3b82f6;
+  color: var(--green);
   font-weight: 600;
   margin-bottom: 0.75rem;
 }

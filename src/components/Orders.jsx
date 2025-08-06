@@ -14,7 +14,7 @@ const Orders = ({ isOpen, onClose }) => {
   const getStatusColor = (status) => {
     switch (status) {
       case 'pending': return '#f59e0b';
-      case 'confirmed': return '#3b82f6';
+      case 'confirmed': return 'var(--green)';
       case 'shipped': return '#8b5cf6';
       case 'delivered': return '#10b981';
       case 'cancelled': return '#ef4444';

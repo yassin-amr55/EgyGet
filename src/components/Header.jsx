@@ -5,7 +5,7 @@ import { useAuth } from '../context/AuthContext';
 import Cart from './Cart';
 import Auth from './Auth';
 import Orders from './Orders';
-import './Header.css';
+import './Header-new.css';
 
 const Header = () => {
   const { searchQuery, setSearchQuery } = useSearch();

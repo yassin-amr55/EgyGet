@@ -20,7 +20,7 @@
 }
 
 .footer-section h3 {
-  color: #3b82f6;
+  color: var(--green);
   margin-bottom: 1rem;
   font-size: 1.5rem;
 }
@@ -52,7 +52,7 @@
 }
 
 .footer-section ul li a:hover {
-  color: #3b82f6;
+  color: var(--green);
 }
 
 .social-links {
@@ -73,7 +73,7 @@
 }
 
 .social-links a:hover {
-  background-color: #3b82f6;
+  background-color: var(--green);
   color: white;
   transform: translateY(-2px);
 }
@@ -99,7 +99,7 @@
 }
 
 .footer-links a:hover {
-  color: #3b82f6;
+  color: var(--green);
 }
 
 @media (max-width: 768px) {

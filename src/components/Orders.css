@@ -121,7 +121,7 @@
 
 .order-info h3 {
   margin: 0 0 0.25rem 0;
-  color: #3b82f6;
+  color: var(--green);
   font-size: 1.2rem;
 }
 
@@ -184,7 +184,7 @@
 
 .item-price {
   font-weight: 600;
-  color: #3b82f6;
+  color: var(--green);
 }
 
 .order-details {

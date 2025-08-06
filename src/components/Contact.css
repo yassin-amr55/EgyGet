@@ -31,7 +31,7 @@
 }
 
 .contact-icon {
-  background: #3b82f6;
+  background: var(--green);
   color: white;
   width: 48px;
   height: 48px;
@@ -86,7 +86,7 @@
 .form-group input:focus,
 .form-group textarea:focus {
   outline: none;
-  border-color: #3b82f6;
+  border-color: var(--green);
 }
 
 .form-group textarea {
@@ -96,14 +96,14 @@
 
 .submit-btn {
   width: 100%;
-  background: linear-gradient(135deg, #3b82f6 0%, #1d4ed8 100%);
+  background: linear-gradient(135deg, var(--green) 0%, var(--green-hover) 100%);
   font-size: 1.1rem;
   padding: 16px;
   margin-top: 1rem;
 }
 
 .submit-btn:hover {
-  background: linear-gradient(135deg, #2563eb 0%, #1e40af 100%);
+  background: linear-gradient(135deg, var(--green) 0%, var(--green-hover) 100%);
 }
 
 @media (max-width: 768px) {
