@@ -1,4 +1,4 @@
-import { useState } from 'react';
+import React, { useState } from 'react';
 import { useCart } from '../context/CartContext';
 import { useSearch } from '../context/SearchContext';
 import './Products.css';
@@ -112,11 +112,16 @@ const Products = () => {
   ];
 
   const categories = [
-    { id: 'src', name: 'src/' }
+    { id: 'all', name: 'All Products' },
+    { id: 'bath', name: 'Bath' },
+    { id: 'kitchen', name: 'Kitchen' },
+    { id: 'pets', name: 'Pets' },
+    { id: 'sale', name: 'Sale' },
+    { id: 'new', name: 'New&Trending' }
   ];
 
   // First filter by category
-  let filteredProducts = selectedCategory === 'src' 
+  let filteredProducts = selectedCategory === 'all' 
     ? products 
     : products.filter(product => product.category === selectedCategory);
 
