@@ -301,3 +301,85 @@
     text-align: center;
   }
 }
+
+.loofah-section {
+  background-color: #fdf7f3;
+  margin-top: 4rem;
+}
+
+.loofah-container {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: space-between;
+  max-width: 1200px;
+  margin: 0 auto;
+  gap: 2rem;
+}
+
+.loofah-text {
+  flex: 1 1 500px;
+  color: #5c3a2f;
+}
+
+.loofah-text h2 {
+  font-size: 2rem;
+  margin-bottom: 1rem;
+  color: #3e2b1f;
+}
+
+.loofah-text em {
+  font-style: italic;
+}
+
+.loofah-text p {
+  font-size: 1.1rem;
+  margin-bottom: 1rem;
+  line-height: 1.6;
+}
+
+.loofah-text .highlight {
+  font-weight: bold;
+  margin-top: 1.5rem;
+  color: #744c2c;
+}
+
+.loofah-icons {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 1.5rem;
+  margin-top: 2rem;
+  font-weight: 600;
+  padding: 50px;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  gap: 100px;
+  background-color: #fdf7f3;
+}
+
+.loofah-icons div {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  background-color: #fff;
+  padding: 0.75rem 1rem;
+  border-radius: 8px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
+}
+
+.loofah-icons img {
+  width: 200px;
+  height: 200px;
+}
+
+.loofah-image {
+  flex: 1 1 100px;
+  text-align: center;
+}
+
+.loofah-image img {
+  max-width: 100%;
+  border-radius: 12px;
+  box-shadow: 0 6px 20px rgba(0, 0, 0, 0.1);
+}

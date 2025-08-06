@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import { useState } from 'react';
 import { useCart } from '../context/CartContext';
 import { useSearch } from '../context/SearchContext';
 import './Products.css';
@@ -236,6 +236,28 @@ const Products = () => {
           </div>
         )}
       </div>
+      <div className="loofah-section">
+        <div className="loofah-container">
+          <div className="loofah-text">
+            <h2><strong>BUT WHAT IS <em>LOOFAH?</em></strong></h2>
+            <p>
+              Egyptian natural loofahs originated in ancient Egypt, where the <em>Luffa aegyptiaca</em> plant was used as a natural sponge for bathing and exfoliation — a tradition thousands of years old.
+            </p>
+            <p className="highlight">
+              SHOWER YOUR WAY to healthier-looking skin with Egyptian loofah by ALMOONI.
+            </p>
+            
+          </div>
+          <div className="loofah-image">
+            <img src="/src/assets/loofah.png" alt="Loofah plant" />
+          </div>
+        </div>
+      </div>
+            <div className="loofah-icons">
+              <img src="/src/assets/natural.png" alt="Natural" />
+              <img src="/src/assets/eco-icon.png" alt="Eco Friendly" />
+              <img src="/src/assets/bio-icon.png" alt="Biodegradable" />
+            </div>
     </section>
   );
 };
